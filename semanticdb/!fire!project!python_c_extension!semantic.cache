@@ -1,0 +1,72 @@
+;; Object python_c_extension/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "python_c_extension/"
+  :tables (list 
+   (semanticdb-table "spam.c"
+    :major-mode 'c-mode
+    :tags 
+        '( ("python2.6/Python.h" include (:system-flag t) nil [1 30])
+            ("spam_system" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [62 77])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [78 93]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [33 248])
+            ("spam_add" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [277 292])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [293 308]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [251 464])
+            ("SpamMethods" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+  {\"system\", spam_system, METH_VARARGS, \"Execute a shell command.\"},
+  {\"add\", spam_add, METH_VARARGS, \"add(a, b)\"},
+  {NULL, NULL, 0, NULL}    /* 必须的结束符 */
+}"
+                :type ("PyMethodDef" type (:type "class") nil nil))
+                nil [467 662])
+            ("initspam" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [689 694]))                  
+                :type ("PyMODINIT_FUNC" type (:type "class") nil nil))
+                nil [665 742])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [754 763])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [764 777]))                  
+                :type "int")
+                nil [745 852]))          
+    :file "spam.c"
+    :pointmax 853
+    :fsize 864
+    :lastmodtime '(20065 51367)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!fire!project!python_c_extension!semantic.cache"
+  :semantic-tag-version "2.0pre7"
+  :semanticdb-version "2.0pre7"
+  )

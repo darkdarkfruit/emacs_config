@@ -1,0 +1,18 @@
+;; Object model/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "model/"
+  :tables (list 
+   (semanticdb-table "user_profile.scheme.js"
+    :major-mode 'js-mode
+    :tags nil
+    :file "user_profile.scheme.js"
+    :pointmax 2028
+    :fsize 2027
+    :lastmodtime '(19822 25802)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!usr!local!misc!sipbo!web!sipbo_test!sipbo!model!semantic.cache"
+  :semantic-tag-version "2.0pre7"
+  :semanticdb-version "2.0pre7"
+  )

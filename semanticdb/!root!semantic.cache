@@ -1,0 +1,33 @@
+;; Object root/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "root/"
+  :tables (list 
+   (semanticdb-table "tmp.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("re" include nil nil [41 50])
+            ("subprocess" include nil nil [51 74])
+            ("difflib" include nil nil [75 89])
+            ("os" include nil nil [90 104])
+            ("twisted.internet" include nil nil [106 139])
+            ("pywhois" include nil nil [140 154])
+            ("time_patch2" function (:arguments 
+              ( ("count" variable nil (reparse-symbol function_parameters) [174 179]))              ) nil [158 499])
+            ("time_diff" function (:arguments 
+              ( ("count" variable nil (reparse-symbol function_parameters) [515 520]))              ) nil [501 835])
+            ("time_difflib" function (:arguments 
+              ( ("count" variable nil (reparse-symbol function_parameters) [855 860]))              ) nil [838 1309])
+            ("time_google_code_dmp" function (:arguments 
+              ( ("count" variable nil (reparse-symbol function_parameters) [1336 1341]))              ) nil [1311 1968])
+            ("if" code nil nil [1971 2128]))          
+    :file "tmp.py"
+    :pointmax 2133
+    :fsize 842
+    :lastmodtime '(20064 50576)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!root!semantic.cache"
+  :semantic-tag-version "2.0pre7"
+  :semanticdb-version "2.0pre7"
+  )

@@ -1,0 +1,44 @@
+;; Object twisted-client-1/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "twisted-client-1/"
+  :tables (list 
+   (semanticdb-table "get-poetry.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("datetime" include nil nil [185 225])
+            ("twisted.internet" include nil nil [227 260])
+            ("parse_args" function nil nil [263 1251])
+            ("PoetrySocket" type
+               (:superclasses ("object")
+                :members 
+                  ( ("poem" variable nil (reparse-symbol indented_block_body) [1286 1295])
+                    ("__init__" function (:arguments 
+                      ( ("self" variable nil (reparse-symbol function_parameters) [1314 1318])
+                        ("task_num" variable nil (reparse-symbol function_parameters) [1320 1328])
+                        ("address" variable nil (reparse-symbol function_parameters) [1330 1337]))                      ) (reparse-symbol indented_block_body) [1301 1690])
+                    ("fileno" function (:arguments 
+                      ( ("self" variable nil (reparse-symbol function_parameters) [1706 1710]))                      ) (reparse-symbol indented_block_body) [1695 1815])
+                    ("connectionLost" function (:arguments 
+                      ( ("self" variable nil (reparse-symbol function_parameters) [1839 1843])
+                        ("reason" variable nil (reparse-symbol function_parameters) [1845 1851]))                      ) (reparse-symbol indented_block_body) [1820 2208])
+                    ("doRead" function (:arguments 
+                      ( ("self" variable nil (reparse-symbol function_parameters) [2224 2228]))                      ) (reparse-symbol indented_block_body) [2213 2885])
+                    ("logPrefix" function (:arguments 
+                      ( ("self" variable nil (reparse-symbol function_parameters) [2904 2908]))                      ) (reparse-symbol indented_block_body) [2890 2935])
+                    ("format_addr" function (:arguments 
+                      ( ("self" variable nil (reparse-symbol function_parameters) [2956 2960]))                      ) (reparse-symbol indented_block_body) [2940 3050]))                  
+                :type "class")
+                nil [1253 3050])
+            ("poetry_main" function nil nil [3052 3493])
+            ("if" code nil nil [3495 3540]))          
+    :file "get-poetry.py"
+    :pointmax 3540
+    :fsize 3539
+    :lastmodtime '(20017 29875)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!fire!project!git_clone!twisted_intro!twisted-intro!twisted-client-1!semantic.cache"
+  :semantic-tag-version "2.0pre7"
+  :semanticdb-version "2.0pre7"
+  )

@@ -1,0 +1,135 @@
+;; Object sipbo/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "sipbo/"
+  :tables (list 
+   (semanticdb-table "tools.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("calendar" include nil nil [30 45])
+            ("time" include nil nil [46 57])
+            ("datetime" include nil nil [58 73])
+            ("printDict" function (:arguments 
+              ( ("d" variable nil (reparse-symbol function_parameters) [90 91]))              ) nil [76 279])
+            ("pd" function (:arguments 
+              ( ("d" variable nil (reparse-symbol function_parameters) [287 288]))              ) nil [280 308])
+            ("""" 
+get utc seconds (from Epoch) from args: time_tuple and timezone.
+timezone must be in range [-11, 11]. timezone defaults to 8.
+        eg:
+            # tuple format: (Year, Month, Day, Hour, Minute, Second)
+            # year: 2010, month: 5, day: 6, hour: 14, minute: 27, second: 47
+            # timezone is UTC+8. ('Beijing/Hongkong')
+            time_tuple = (2010, 5, 6, 14, 27, 47), 
+            timezone = 8.
+
+utc_0 return (utc_0_seconds, utc_0_tuple, utc_timezone(default is utc+0))
+    eg:
+
+    >>> utc_0(s, -8)
+    >>>(1298669086, (2011, 2, 25, 21, 24, 46, 4, 56, 0), 0)
+
+"""" code nil nil [310 900])
+            ("utc_0" function (:arguments 
+              ( ("time_tuple" variable nil (reparse-symbol function_parameters) [911 921])
+                ("timezone" variable nil (reparse-symbol function_parameters) [923 931]))              ) nil [901 2123])
+            ("utc_0_seconds" function (:arguments 
+              ( ("time_tuple" variable nil (reparse-symbol function_parameters) [2147 2157])
+                ("timezone" variable nil (reparse-symbol function_parameters) [2159 2167]))              ) nil [2129 2239])
+            ("utc_0_tuple" function (:arguments 
+              ( ("time_tuple" variable nil (reparse-symbol function_parameters) [2257 2267])
+                ("timezone" variable nil (reparse-symbol function_parameters) [2269 2277]))              ) nil [2241 2349])
+            ("utc_0_seconds_now" function (:arguments 
+              ( ("timezone" variable nil (reparse-symbol function_parameters) [2373 2381]))              ) nil [2351 2456])
+            ("print_utc_time_in_asctime" function (:arguments 
+              ( ("time_tuple" variable nil (reparse-symbol function_parameters) [2488 2498])
+                ("timezone" variable nil (reparse-symbol function_parameters) [2500 2508]))              ) nil [2458 2608])
+            ("test" function nil nil [2610 3090])
+            ("if" code nil nil [3092 3130]))          
+    :file "tools.py"
+    :pointmax 3130
+    :fsize 3129
+    :lastmodtime '(19822 25802)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "db_mongo.py"
+    :major-mode 'python-mode
+    :tags 
+        '( (""""A lightweight wrapper around mongodb."""" code nil nil [597 640])
+            ("pymongo" include nil nil [642 656])
+            ("logging" include nil nil [657 671])
+            ("time" include nil nil [672 683])
+            ("Connection" type
+               (:superclasses ("object")
+                :members 
+                  ( ("'''A lightweight wrapper around Mongodb DB-API connections.
+
+    The main value we provide is wrapping rows in a dict/object so that
+    columns can be accessed by name. Typical usage:
+
+        db = database.Connection("localhost", "mydatabase")
+        for article in db.query(collection):
+            print collection.title
+
+    Cursors are hidden by the implementation, but other than that, the methods
+    are very similar to the DB-API.
+
+    We explicitly set the timezone to UTC and the character encoding to
+    UTF-8 on all connections to avoid time zone and encoding errors.
+    '''" code nil (reparse-symbol indented_block_body) [718 1309])
+                    ("__init__" function (:arguments 
+                      ( ("self" variable nil (reparse-symbol function_parameters) [1329 1333])
+                        ("host" variable nil (reparse-symbol function_parameters) [1335 1339])
+                        ("port" variable nil (reparse-symbol function_parameters) [1353 1357])
+                        ("loginUser" variable nil (reparse-symbol function_parameters) [1365 1374])
+                        ("loginPwd" variable nil (reparse-symbol function_parameters) [1381 1389])
+                        ("max_idle_time" variable nil (reparse-symbol function_parameters) [1396 1409]))                      ) (reparse-symbol indented_block_body) [1316 1897])
+                    ("__del__" function (:arguments 
+                      ( ("self" variable nil (reparse-symbol function_parameters) [1915 1919]))                      ) (reparse-symbol indented_block_body) [1903 1948])
+                    ("connect" function (:arguments 
+                      ( ("self" variable nil (reparse-symbol function_parameters) [1966 1970])
+                        ("host" variable nil (reparse-symbol function_parameters) [1972 1976])
+                        ("port" variable nil (reparse-symbol function_parameters) [1990 1994]))                      ) (reparse-symbol indented_block_body) [1954 2126])
+                    ("getConn" function (:arguments 
+                      ( ("self" variable nil (reparse-symbol function_parameters) [2144 2148])
+                        ("host" variable nil (reparse-symbol function_parameters) [2150 2154])
+                        ("port" variable nil (reparse-symbol function_parameters) [2168 2172]))                      ) (reparse-symbol indented_block_body) [2132 2592])
+                    ("connectDb" function (:arguments 
+                      ( ("self" variable nil (reparse-symbol function_parameters) [2612 2616])
+                        ("dbName" variable nil (reparse-symbol function_parameters) [2618 2624]))                      ) (reparse-symbol indented_block_body) [2598 2934])
+                    ("changeToDb" function (:arguments 
+                      ( ("self" variable nil (reparse-symbol function_parameters) [2955 2959])
+                        ("dbname" variable nil (reparse-symbol function_parameters) [2961 2967]))                      ) (reparse-symbol indented_block_body) [2940 3003])
+                    ("getDb" function (:arguments 
+                      ( ("self" variable nil (reparse-symbol function_parameters) [3019 3023])
+                        ("dbName" variable nil (reparse-symbol function_parameters) [3025 3031]))                      ) (reparse-symbol indented_block_body) [3009 3079])
+                    ("getColl" function (:arguments 
+                      ( ("self" variable nil (reparse-symbol function_parameters) [3100 3104])
+                        ("db" variable nil (reparse-symbol function_parameters) [3106 3108])
+                        ("collName" variable nil (reparse-symbol function_parameters) [3110 3118]))                      ) (reparse-symbol indented_block_body) [3088 3430])
+                    ("getConn" function (:arguments 
+                      ( ("self" variable nil (reparse-symbol function_parameters) [3460 3464]))                      ) (reparse-symbol indented_block_body) [3448 3493])
+                    ("disconnect" function (:arguments 
+                      ( ("self" variable nil (reparse-symbol function_parameters) [3513 3517]))                      ) (reparse-symbol indented_block_body) [3498 3684])
+                    ("close" function (:arguments 
+                      ( ("self" variable nil (reparse-symbol function_parameters) [3699 3703]))                      ) (reparse-symbol indented_block_body) [3689 3732])
+                    ("closeDb" function (:arguments 
+                      ( ("self" variable nil (reparse-symbol function_parameters) [3750 3754]))                      ) (reparse-symbol indented_block_body) [3738 3883])
+                    ("reconnect" function (:arguments 
+                      ( ("self" variable nil (reparse-symbol function_parameters) [3902 3906]))                      ) (reparse-symbol indented_block_body) [3888 4029])
+                    ("_ensure_connected" function (:arguments 
+                      ( ("self" variable nil (reparse-symbol function_parameters) [4057 4061]))                      ) (reparse-symbol indented_block_body) [4035 4589]))                  
+                :type "class")
+                nil [688 4589])
+            ("mongodbTest" function nil nil [4592 5077])
+            ("if" code nil nil [5079 5238]))          
+    :file "db_mongo.py"
+    :pointmax 5238
+    :fsize 5243
+    :lastmodtime '(19822 25802)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!usr!local!misc!sipbo!web!sipbo_test!sipbo!semantic.cache"
+  :semantic-tag-version "2.0pre7"
+  :semanticdb-version "2.0pre7"
+  )

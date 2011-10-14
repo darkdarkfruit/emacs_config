@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: python-head
+# key: pyhead
+# binding: "C-c C-p C-h"
+# expand-env: ((some-var some-value))
+# --
+#!env python
+# -*- coding: utf-8 -*-
