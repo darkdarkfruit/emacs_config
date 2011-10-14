@@ -1,0 +1,132 @@
+(global-linum-mode t)
+
+;; (tool-bar-mode -1)
+
+(setq scroll-margin 5)
+(setq major-mode 'text-mode)
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+
+;(set-message-beep 'silent)
+
+
+; use only spaces and no tabs
+; (setq-default indent-tabs-mode nil)    ;; auto indent tab ? "nil" or "t"
+(setq-default indent-tabs-mode t)    ;; auto indent tab ? "nil" or "t"
+(setq tab-width 4)
+
+
+;; goto-line
+(global-set-key "\M-g" 'goto-line)
+
+
+
+; copy
+(setq x-select-enable-clipboard t)
+
+
+;;;;;;;;;;;;;;;;;; copy from net  starts
+;;time setting
+(display-time-mode t)
+(setq display-time-24hr-format t)
+(setq display-time-day-and-date t)
+(setq display-time-interval 10)
+
+;; simplify yes-or-no
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; vi quick find (f)
+(defun go-to-char (n char)
+  "Move forward to Nth occurence of CHAR. Typing `wy-go-to-char-key' again will move forwad to the next Nth occurence of CHAR."
+  (interactive "p\ncGo to char: ")
+  (search-forward (string char) nil nil n)
+  (while (char-equal (read-char)
+			 char)
+	(search-forward (string char) nil nil n))
+  (setq unread-command-events (list last-input-event)))
+(define-key global-map (kbd "C-c s") 'go-to-char)
+
+
+;; hot keys
+(global-set-key [f6] 'speedbar)
+(global-set-key [f7] 'previous-error)
+(global-set-key [f8] 'next-error)
+(global-set-key [f9] 'other-window);F8窗口间跳转
+
+;;;;;;;;;;;;;;;;;; copy from net  ends
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;  python env start ;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+; pymacs
+(autoload 'pymacs-apply "pymacs")
+(autoload 'pymacs-call "pymacs")
+(autoload 'pymacs-eval "pymacs" nil t)
+(autoload 'pymacs-exec "pymacs" nil t)
+(autoload 'pymacs-load "pymacs" nil t)
+;;(eval-after-load "pymacs"
+;;  '(add-to-list 'pymacs-load-path YOUR-PYMACS-DIRECTORY"))
+
+
+;; ropemacs
+(require 'pymacs)
+(pymacs-load "ropemacs" "rope-")
+
+
+; auto-complete
+(require 'auto-complete)
+(add-to-list 'ac-dictionary-directories "/usr/share/auto-complete/dict/")
+(require 'auto-complete-config)
+(ac-config-default)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;  python env end ;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; ido
+(require 'ido)
+(ido-mode t)
+
+;; yasnippet
+;;
+(add-to-list 'load-path
+             "~/.emacs.d/plugins/yasnippet")
+(require 'yasnippet-bundle)
+(yas/load-directory "~/.emacs.d/plugins/yasnippet/snippets")
+
+
+;; org mode
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+(setq org-agenda-files (list "~/org/work.org"
+                             "~/org/home.org"))
+
+;; desktop-save
+(desktop-save-mode t)
+;;
+
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
+ '(ecb-options-version "2.32")
+ '(menu-bar-mode t)
+ '(safe-local-variable-values (quote ((test-case-name . twisted\.test\.test_task\,twisted\.test\.test_cooperator) (test-case-name . twisted\.test\.test_app))))
+ '(save-place t nil (saveplace))
+ '(show-paren-mode t)
+ '(size-indication-mode t)
+ '(text-mode-hook (quote (text-mode-hook-identify)))
+ '(tool-bar-mode nil))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 98 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
